@@ -3,6 +3,14 @@
 library(readr)
 library(plyr)
 library(dplyr)
+library(stringr)
+library(reshape2)
+
+if(!dir.exists("UCI HAR Dataset/")){
+        temp  <- tempfile()
+        download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", temp, mode = "wb")
+        unzip(temp)
+}
 
 ## Read in test dataset, labels, and subject
 data_test <- read_fwf("UCI HAR Dataset/test/X_test.txt", fwf_empty("UCI HAR Dataset/test/X_test.txt"))
@@ -39,4 +47,22 @@ data_all <- rbind(data_test, data_train)
 
 ## Change Activity to a Factor with correct labels
 data_all$Activity <- factor(data_all$Activity, levels = 1:6, labels=activity_labels$X2)
+
+## Remove the duplicate columns
+data_all <- data_all[!duplicated(names(data_all))]
+
+## Select all of the variables pertaining to the means and the standard deviation along with the Activity and Subject variables
+req_data <- select(data_all, contains("mean"),contains("std"),matches("Activity"),matches("Subject"))
+
+## Reshape required data into a long tidy format
+melted_data <- melt(req_data, id.vars = c("Activity", "Subject"))
+
+## Group our melted data by Activity, Subject, and variable
+grouped_melted <- group_by(melted_data, Activity, Subject, variable)
+
+## Summarise our date getting the mean for each variable for each activity for each subject.
+summarised_data <- summarise(grouped_melted, mean=mean(value))
+
+## Write our second tidy data set to a text file.
+write.table(summarised_data, file="secondtidy_ds.txt", row.names = FALSE)
 
