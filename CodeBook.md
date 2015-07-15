@@ -1,5 +1,5 @@
 ### Code Book for Tidy Data File
-This file describes the data and structure in the tidy data file named **secondtidy_ds.txt** located in the Git repository.
+This file describes the data and structure in the tidy data file named **secondtidy_ds.txt** located in the Git repository. The data represents a single mean value of the means and standard deviations of an individual measurement of a particular activity of a particular subject. It is in a "long" tidy format.
 
 **Activity**: Factor with 6 levels -  WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING  
 **Subject**: Integer identifing individual subjects  

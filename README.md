@@ -4,6 +4,7 @@ This project requires that you have local access to the Human Activity Recogniti
 
 ## Files in Repository
 * .gitignore - our gitignore file that tells git to ignore, i.e. leave out of our repository
+* CodeBook.md - this file describes our tidy data file
 * Getting_and_Cleaning_Data_Project.Rproj - the R project file
 * History.Rhistory - an R history file that shows some of the work I did to create the run_analysis.R script
 * README.md - this file
