@@ -22,4 +22,4 @@ This file describes the data and structure in the tidy data file named **secondt
 * fBodyGyroMag
 * fBodyGyroJerkMag
 
-**mean**: This is the calculated mean of the means and standard deviations of the individual measurements above.
+**mean**: This is the calculated mean of the means and standard deviations of the individual measurements above for each activity of each subject.
