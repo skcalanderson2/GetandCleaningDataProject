@@ -9,7 +9,7 @@
 .Rproj.user/
 
 # Raw Data Directory and Files
-/UCI_HAR_Dataset
+/UCI HAR Dataset
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
