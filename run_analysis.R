@@ -14,3 +14,6 @@ labels_train <- read_csv("UCI_HAR_Dataset/train/y_train.txt")
 
 ## Read in activity labels
 activity_labels <- read_delim("UCI_HAR_Dataset/activity_labels.txt", delim = " ")
+
+## Read in variable names, i.e. features
+variable_names <- read_delim("UCI_HAR_Dataset/features.txt", delim = " ")
