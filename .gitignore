@@ -1,17 +1,15 @@
 # History files
 .Rhistory
 .Rapp.history
-
 # Example code in package build process
 *-Ex.R
-
 # RStudio files
 .Rproj.user/
 .RData
-
 # Raw Data Directory and Files
 /UCI HAR Dataset
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
 .Rproj.user
+variable_names.txt
