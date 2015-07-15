@@ -7,6 +7,7 @@
 
 # RStudio files
 .Rproj.user/
+.RData
 
 # Raw Data Directory and Files
 /UCI HAR Dataset
